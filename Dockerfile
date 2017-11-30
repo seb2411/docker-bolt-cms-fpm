@@ -17,9 +17,7 @@ RUN apk add libxml2-dev && docker-php-ext-install xml
 
 # Install standalone dependencies
 RUN docker-php-ext-install \
-  iconv \
   mysqli \
-  mysqlnd \
   pdo \
   pdo_mysql \
   mbstring \

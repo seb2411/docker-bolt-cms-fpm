@@ -1,5 +1,8 @@
 FROM php:7.1-fpm-alpine3.4
 
+# Custom www.conf to activate environment variables
+COPY config/www.conf /usr/local/etc/php-fpm.d/www.conf
+
 # Upgrade the system
 RUN apk update && apk upgrade
 

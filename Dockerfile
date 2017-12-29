@@ -10,7 +10,9 @@ RUN apk update && apk upgrade
 RUN apk add curl-dev &&  docker-php-ext-install curl
 
 # Install gd
-RUN apk add libpng-dev && docker-php-ext-install gd
+RUN apk add libpng-dev libjpeg-turbo-dev freetype-dev \
+  && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+  && docker-php-ext-install gd
 
 # Install intl
 RUN apk add icu-dev && docker-php-ext-install intl

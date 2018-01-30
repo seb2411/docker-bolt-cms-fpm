@@ -1,4 +1,4 @@
-FROM php:7.1-fpm-alpine3.4
+FROM php:7.2-fpm-alpine3.7
 
 # Custom www.conf to activate environment variables
 COPY config/www.conf /usr/local/etc/php-fpm.d/www.conf
